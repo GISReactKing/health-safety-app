@@ -1,0 +1,30 @@
+page-home {
+
+  scroll-content {
+          display: flex;
+          flex-direction: column;
+      }
+
+      ion-grid {
+          padding: 0;
+          height: 100%;
+      }
+
+      ion-row {
+          flex: 1;
+      }
+
+      .logo{
+        float: right;
+        height: 20px;
+      }
+
+      .help {
+        height:  40px;
+         z-index: 9999; position:fixed; bottom:4%; right:5%;
+
+
+
+      }
+
+}

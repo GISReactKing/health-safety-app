@@ -1,0 +1,44 @@
+<ion-header dark>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      SAFETY NET <img src = "assets/images/severntrentlogo.png" class="logo"/>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+
+
+    <ion-row>
+      <ion-col>
+        <img src="assets/images/home1.png" (click)="openReportPage()" />
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+          <img src="assets/images/home2.png" (click)="openReportPage()" />
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <img src="assets/images/home3.png" (click)="openWellBeingPage()" />
+      </ion-col>
+    </ion-row>
+
+    <ion-fab right bottom>
+   <button ion-fab color="light"><ion-icon name="arrow-dropleft"></ion-icon></button>
+   <ion-fab-list side="left">
+     <button ion-fab><ion-icon name="ios-information-circle-outline"></ion-icon></button>
+     <button ion-fab (click)="openFaqsPage()"><ion-icon name="ios-help-circle-outline"></ion-icon></button>
+   </ion-fab-list>
+ </ion-fab>
+
+
+  </ion-grid>
+</ion-content>

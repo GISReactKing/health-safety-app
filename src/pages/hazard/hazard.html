@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+        Recent Safety Hazards
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+    <ion-item>
+        <button class="add button-ios-rounded" ion-button full icon-right margin-bottom color="danger" (click)="addHazard()">
+            Please enter the safety hazard details
+            <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-item>
+
+    <div *ngIf="hasHazards">
+        <ion-list>
+
+            <ion-item *ngFor="let hazard of hazards">
+                <ion-thumbnail item-left>
+                    <img [src]="hazard.image">
+                </ion-thumbnail>
+                <h2>{{ hazard.location }} </h2>
+                <button ion-button clear item-right (click)="viewHazard({'key':hazard.id, 'rev':hazard.rev })">
+                  View
+            </button>
+            </ion-item>
+
+        </ion-list>
+    </div>
+
+
+</ion-content>

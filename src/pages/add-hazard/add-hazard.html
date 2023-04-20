@@ -1,0 +1,129 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>{{ pageTitle }}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+
+    <div>
+
+        <ion-item *ngIf="isEdited && !hideForm">
+            <button ion-button item-right color="secondary" text-center block (click)="deleteHazard()">Remove this Entry?</button>
+        </ion-item>
+
+
+
+        <div *ngIf="hideForm">
+            <ion-item class="post-entry-message" text-wrap>
+                <h2>Success!</h2>
+            </ion-item>
+        </div>
+
+        <div *ngIf="!hideForm">
+            <form [formGroup]="form" (ngSubmit)="saveHazard()">
+
+              <ion-item-group>
+                  <ion-item-divider color="light">User</ion-item-divider>
+                  <ion-item>
+                      <ion-input type="text" placeholder="User" formControlName="user" [(ngModel)]="user"></ion-input>
+                  </ion-item>
+              </ion-item-group>
+
+
+              <ion-item-group>
+                  <ion-item>
+                      <ion-label>Date</ion-label>
+                      <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" formControlName="date" [(ngModel)]="date"></ion-datetime>
+                  </ion-item>
+              </ion-item-group>
+
+
+              <ion-item-group>
+                  <ion-item-divider color="light">Location Type</ion-item-divider>
+                  <ion-item>
+                      <ion-label>Location Type </ion-label>
+                      <ion-select class="select" formControlName="location" block [(ngModel)]="location">
+                          <ion-option value="Location1">Location 1</ion-option>
+                          <ion-option value="Location2">Location 2</ion-option>
+                          <ion-option value="Location3">Location 3</ion-option>
+                          <ion-option value="Location4">Location 4</ion-option>
+                          <ion-option value="Location5">Location 5</ion-option>
+                          <ion-option value="Location6">Location 6</ion-option>
+                          <ion-option value="Location7">Location 7</ion-option>
+
+                      </ion-select>
+                  </ion-item>
+              </ion-item-group>
+
+                <ion-list>
+                    <ion-item-group>
+                        <ion-item-divider color="light">Standards</ion-item-divider>
+                        <ion-item>
+                            <ion-label>Please select: </ion-label>
+                            <ion-select class="select" interface="action-sheet" formControlName="standards" block [(ngModel)]="standards">
+                              <ion-option value="Standard 1">Standard 1</ion-option>
+                              <ion-option value="Standard 2">Standard 2</ion-option>
+                              <ion-option value="Standard 3">Standard 3</ion-option>
+                            </ion-select>
+                        </ion-item>
+                    </ion-item-group>
+
+
+                    <ion-item-group>
+                        <ion-item-divider color="light">Description</ion-item-divider>
+                        <ion-item>
+                            <ion-textarea  type="text" placeholder="Description..." formControlName="description" [(ngModel)]="description"></ion-textarea>
+                        </ion-item>
+                    </ion-item-group>
+
+
+                    <ion-item-group>
+                        <ion-item-divider color="light">Hazard Image</ion-item-divider>
+                        <ion-item>
+                            <button ion-button block margin-bottom color="primary" large (click)="takePhotograph()">
+			     <span class="margin-right-10">Take a photograph </span>    <ion-icon ios="ios-camera" md="md-camera" ></ion-icon>
+
+         </button>
+
+
+
+                        </ion-item>
+
+
+                        <ion-item>
+                            <img [src]="hazardImage">
+                            <input type="hidden" name="image" formControlName="image" [(ngModel)]="hazardImage">
+                        </ion-item>
+                    </ion-item-group>
+
+
+
+
+                    <ion-item-group>
+                        <ion-item-divider color="light">Immediate corrective actions taken</ion-item-divider>
+                        <ion-item>
+                            <ion-textarea placeholder="Enter briefly about the hazard you are reporting" formControlName="immediateActionTaken" rows="6" [(ngModel)]="immediateActionTaken"></ion-textarea>
+                        </ion-item>
+                    </ion-item-group>
+
+
+                    <ion-item>
+                        <button ion-button color="primary" text-center block [disabled]="!form.valid">Save Entry</button>
+                    </ion-item>
+
+
+
+                </ion-list>
+
+
+
+            </form>
+        </div>
+    </div>
+
+
+</ion-content>

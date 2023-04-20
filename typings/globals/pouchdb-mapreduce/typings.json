@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/8c747283fecf11c93d8ce12e82bcea8eac291c0c/pouchdb-mapreduce/index.d.ts",
+    "raw": "registry:dt/pouchdb-mapreduce#5.4.4+20161117212403",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/8c747283fecf11c93d8ce12e82bcea8eac291c0c/pouchdb-mapreduce/index.d.ts"
+  }
+}
